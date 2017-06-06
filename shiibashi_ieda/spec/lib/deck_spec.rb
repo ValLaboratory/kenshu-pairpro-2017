@@ -8,6 +8,9 @@ describe "デッキ" do
     it "カードが52枚ある" do
       expect(deck.cards.length).to eq(52)
     end
+    it "カードを一枚引く" do
+      expect(deck.pick().kind_of?(Card)).to eq(true)
+    end
 
   end
 end

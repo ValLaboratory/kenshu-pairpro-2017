@@ -9,10 +9,11 @@ class Deck
         @cards.push(Card.new(t+1,suit))
       end
     end
+    @cards.shuffle!
   end
 
   def pick()
-
+    @cards.shift()
   end
 
   attr_reader :cards
