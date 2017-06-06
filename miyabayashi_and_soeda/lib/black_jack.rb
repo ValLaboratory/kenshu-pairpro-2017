@@ -19,18 +19,23 @@ class Player
 
   def calculate
 
-    # 変換
+
+    #変換
     convert_hand = @hand.map do |card|
-      if card == 1
-        11
+      case card
+      when 11..13
+        10
       else
         card
       end
     end
-
     #全部たす
-    convert_hand.sum
-
+    sum  = convert_hand.sum
+    if @hand.include?(1) && sum + 10 <= 21
+      sum + 10
+    else
+      sum
+    end  
   end
 
 end
