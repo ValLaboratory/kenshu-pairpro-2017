@@ -1,6 +1,18 @@
 # ブラックジャック
 require_relative "../../lib/black_jack.rb"
 
+describe "Deckクラスは" do
+  context "同じ数字を" do
+    it "５回目は引けない" do
+      mydeck= Deck.new
+      expect(mydeck.draw(2)).to eq(2)
+      expect(mydeck.draw(2)).to eq(2)
+      expect(mydeck.draw(2)).to eq(2)
+      expect(mydeck.draw(2)).to eq(2)
+      expect(mydeck.draw(2)).to eq(nil)
+    end
+  end
+end
 
 describe "Playerクラスは" do
   before do
@@ -34,4 +46,13 @@ describe "Playerクラスは" do
       expect(@player1.calculate).to eq(12)
     end
   end
+  context "Aと5と6を引いたら" do
+    it "12になる" do
+      @player1.get_card(1)
+      @player1.get_card(5)
+      @player1.get_card(6)
+      expect(@player1.calculate).to eq(12)
+    end
+  end
+
 end
