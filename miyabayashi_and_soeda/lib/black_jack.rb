@@ -6,6 +6,13 @@ def draw
 
 end
 
+def calculate(num1,num2)
 
-puts draw
-puts draw
+  num1 + num2
+
+end
+
+puts num1 = draw
+puts num2 = draw
+
+puts calculate(num1,num2)
