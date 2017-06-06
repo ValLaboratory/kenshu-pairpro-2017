@@ -3,4 +3,6 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem "rspec"
-gem "rubycards"
+#gem "rubycards"
+gem "sinatra"
+gem "sinatra-reloader"
