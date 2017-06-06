@@ -1,22 +1,36 @@
 
+class Deck
 
-def draw
-
-  rand(1..13)
-
-end
-
-def calculate(num1,num2)
-
-  # Aは11に変換
-  num1 = 11 if num1 == 1
-  num2 = 11 if num2 == 1
-
-  num1 + num2
+  def draw
+    rand(1..13)
+  end
 
 end
 
-puts num1 = draw
-puts num2 = draw
+class Player
 
-puts calculate(num1,num2)
+  def initialize
+    @hand = []
+  end
+
+  def get_card(card)
+    @hand << card
+  end
+
+  def calculate
+    # 全部たす
+     @hand.sum
+
+  end
+
+end
+
+# インスタンス生成
+mydeck = Deck.new
+player1 = Player.new
+
+# ２枚引く
+player1.get_card(mydeck.draw)
+player1.get_card(mydeck.draw)
+
+player1.calculate
