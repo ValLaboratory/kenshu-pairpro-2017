@@ -28,5 +28,10 @@ class SampleApp < Sinatra::Base
 
   end
 
+  get "/result" do
+    @point = params[:point]
+    erb :result
+  end
+
 
 end

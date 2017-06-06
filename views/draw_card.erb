@@ -5,14 +5,17 @@
     <title></title>
   </head>
   <body>
-    s
     <form method="GET" action="/draw_card">
       <input type="hidden" name="cards" value=<%= @cards %>>
       <input type="hidden" name="hands" value=<%= @hands %>>
       <input type="submit" value="もう一枚カードを引く">
     </form>
-    <%= @points %>
-    <%= @cards %>
-    <%= @hands %>
+    ポイント<%= @points %><br/>
+    引いたカード<%= @cards %><br/>
+    手札<%= @hands %><br/>
+    <form method="GET" action="/result">
+      <input type="hidden" name="point" value=<%= @points %>>
+      <input type="submit" value="ストップ">
+    </form>
   </body>
 </html>
