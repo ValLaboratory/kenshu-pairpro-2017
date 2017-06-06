@@ -18,8 +18,18 @@ class Player
   end
 
   def calculate
-    # 全部たす
-     @hand.sum
+
+    # 変換
+    convert_hand = @hand.map do |card|
+      if card == 1
+        11
+      else
+        card
+      end
+    end
+
+    #全部たす
+    convert_hand.sum
 
   end
 

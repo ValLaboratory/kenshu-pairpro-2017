@@ -14,10 +14,10 @@ describe "Playerクラスは" do
     end
   end
   context "1が入ってるときは" do
-    it "11として計算する" do
+    it "1を11として計算する" do
       @player1.get_card(1)
       @player1.get_card(10)
-      expect(@player1.calculate).to eq(11)
+      expect(@player1.calculate).to eq(21)
     end
   end
 end
