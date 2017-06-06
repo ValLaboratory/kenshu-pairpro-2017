@@ -9,4 +9,5 @@ player = Player.new("taniguchi")
   player.add_card(dealer.deal)
 end
 
-puts player.show_hands
+puts "手札：#{player.show_hands}"
+puts "得点：#{player.calc_point}"
