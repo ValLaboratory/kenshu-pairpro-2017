@@ -1,15 +1,26 @@
-describe “drawメソッドは、” do
+require './deck.rb'
 
-  context “山札からカードを一枚引いた時、” do
-    it “カード名を表示する。” do
-      expect(draw(YY)).to eq("")
+describe "drawメソッドは、" do
+
+  context "山札からカードを一枚引いた時、" do
+    it "返り値がnilではないか。" do
+      deck = Deck.new
+      #deck.distribute()
+      expect(deck.distribute()).not_to be_nil
     end
   end
+  context "カードを５２マイ引いた時に" do
 
-  context “山札と手札に同じカードがある場合は、” do
-    it “falseが返される。” do
-      expect(XX(YY)).to falser
+    it "かぶるカードはないか" do
+      deck = Deck.new
+      52.times do
+        deck.distribute
+      end
+
+      p deck.distributed_cards.uniq.length == 52
+      expect(deck.distributed_cards.uniq.length == 52).to be_truthy
+
     end
-  end
 
+  end
 end
