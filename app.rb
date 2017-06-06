@@ -14,12 +14,19 @@ class SampleApp < Sinatra::Base
 
   get "/draw_card" do
 
-    deck = Deck.new
-    hand = Hand.new
+    cards = params[:cards].nil? ? [] : params[:cards].split(",")
+    hands = params[:hands].nil? ? [] : params[:hands].split(",")
+
+    deck = Deck.new(cards)
+    hand = Hand.new(hands)
 
     hand.draw(deck)
-    @cards = deck.distributed_cards
+    @cards = deck.distributed_cards.join(",")
+    @hands = hand.my_cards.join(",")
     @points = hand.sum_points
     erb :draw_card
+
   end
+
+
 end

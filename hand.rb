@@ -1,15 +1,14 @@
 class Hand
-  def initialize()
-    @my_cards = []
+
+  attr_accessor :my_cards
+
+  def initialize(my_cards = [])
+    @my_cards = my_cards
   end
 
   def draw(deck_card)
     distributed_card = deck_card.distribute
     @my_cards << distributed_card
-  end
-
-  def my_cards
-    @my_cards
   end
 
   def sum_points
