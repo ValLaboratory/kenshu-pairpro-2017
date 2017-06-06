@@ -8,6 +8,10 @@ end
 
 def calculate(num1,num2)
 
+  # Aは11に変換
+  num1 = 11 if num1 == 1
+  num2 = 11 if num2 == 1
+
   num1 + num2
 
 end
