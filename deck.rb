@@ -3,11 +3,13 @@
 
 class Deck
 
+  attr_accessor :distributed_cards
+
   RANKS = [*1..13]
   SUITS = %w{ Clubs Diamonds Hearts Spades }
 
-  def initialize()
-    @distributed_cards = []
+  def initialize(distributed_cards = [])
+    @distributed_cards = distributed_cards
   end
 
   #配る
@@ -27,8 +29,4 @@ class Deck
     end
   end
 
-  #配ったカードをかえす
-  def distributed_cards
-    @distributed_cards
-  end
 end

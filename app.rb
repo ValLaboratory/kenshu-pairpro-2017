@@ -18,6 +18,7 @@ class SampleApp < Sinatra::Base
     hand = Hand.new
 
     hand.draw(deck)
+    @cards = deck.distributed_cards
     @points = hand.sum_points
     erb :draw_card
   end
