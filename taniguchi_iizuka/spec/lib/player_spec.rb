@@ -22,4 +22,20 @@ describe "Playerクラスの" do
       end
     end
   end
+  describe "calc_pointメソッドは" do
+    context "手札がスペードの１とハートの１１の時" do
+      it "数値２１を返す" do
+        @player.add_card(Card.new("s", 1))
+        @player.add_card(Card.new("h", 11))
+        expect(@player.calc_point).to eq(21)
+      end
+    end
+    context "手札がハートの１とスペードの１の時" do
+      it "数値１２を返す" do
+        @player.add_card(Card.new("s", 1))
+        @player.add_card(Card.new("h", 1))
+        expect(@player.calc_point).to eq(12)
+      end
+    end
+  end
 end
